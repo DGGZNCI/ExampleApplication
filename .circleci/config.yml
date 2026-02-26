@@ -41,4 +41,4 @@ jobs:
     steps:
       - run:
         name: deploy-ExampleApplication
-        command: ssh -o StrictHostKeyChecking=no $EC2_DevOpsSec@EC2_PUBLIC_DNS "rm -rf ExampleApplication/;git clone https://github.com/DGGZNCI/ExampleApplication.git; source ExampleApplication/deploy.sh"
+        command: ssh -o StrictHostKeyChecking=no $EC2_DevOpsSec@$EC2_PUBLIC_DNS "rm -rf ExampleApplication/;git clone https://github.com/DGGZNCI/ExampleApplication.git; source ExampleApplication/deploy.sh"
