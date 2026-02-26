@@ -17,7 +17,6 @@ workflows:
           requires:
             - build
 
-
 # Define the jobs we want to run for this project
 jobs:
   build:
@@ -48,9 +47,9 @@ jobs:
       - run:
           name: deploy-application
           command: |
-            ssh -o StrictHostKeyChecking=no $EC2_DevOpsSec@$EC2_PUBLIC_DNS "
-              rm -rf ExampleApplication &&
-              git clone https://github.com/DGGZNCI/ExampleApplication.git &&
-              cd ExampleApplication &&
+            ssh -o StrictHostKeyChecking=no ec2-user@$EC2_PUBLIC_DNS "
+              rm -rf ExampleApplication/;
+              git clone https://github.com/DGGZNCI/ExampleApplication.git;
+              cd ExampleApplication;
               bash deploy.sh
             "
