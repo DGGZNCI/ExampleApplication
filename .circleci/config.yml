@@ -18,7 +18,6 @@ workflows:
             - build
 
 
-
 # Define the jobs we want to run for this project
 jobs:
   build:
