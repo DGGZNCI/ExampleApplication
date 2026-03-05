@@ -8,5 +8,8 @@ pm2 stop example_app
 cd ExampleApplication/
 #Install dependencies
 npm install
+#Add keys for https connection
+echo $PRIVATE_KEY > privatekey.pem
+echo $SERVER > server.crt
 #Start the application
 pm2 start ./bin/www --name example_app
